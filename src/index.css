@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-handwriting: "Caveat", cursive;
+
+  /* Warmer, creamier, more natural palette */
+  --color-stone-50: #FCFAF8;
+  --color-stone-100: #F4F0EA;
+  --color-stone-200: #EAE4D9;
+  --color-stone-300: #DCD3C6;
+  --color-stone-400: #BBAFA1;
+  --color-stone-500: #96887A;
+  --color-stone-600: #736558;
+  --color-stone-700: #574B40;
+  --color-stone-800: #4A4238;
+  --color-stone-900: #332D26;
+  --color-stone-950: #1F1B17;
+
+  --animate-spin-slow: spin 18s linear infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html, body {
+    overscroll-behavior-x: none;
+  }
+
+  body {
+    @apply bg-stone-50 text-stone-800 font-sans antialiased selection:bg-stone-200 selection:text-stone-900;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+
+  /* Cursor pointer inherited down to all descendants of any interactive element.
+     Prevents the cursor from flipping to text/default while hovering inner text or icons. */
+  a,
+  a *,
+  button,
+  button *,
+  [role="button"],
+  [role="button"] *,
+  summary,
+  summary *,
+  label[for],
+  label[for] * {
+    cursor: pointer !important;
+  }
+
+  button:disabled,
+  button:disabled *,
+  [aria-disabled="true"],
+  [aria-disabled="true"] * {
+    cursor: not-allowed;
+  }
+
+  /* Inputs keep their text cursor even when wrapped in a label[for]. */
+  input,
+  textarea,
+  select {
+    cursor: auto;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-stone-500);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  video, img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-grain {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  .bg-paper {
+    background-color: #FCFAF8;
+    background-image:
+      radial-gradient(at 0% 0%, rgba(187,175,161,0.10) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(220,211,198,0.18) 0px, transparent 50%);
+  }
+
+  .ink-highlight {
+    background-image:
+      linear-gradient(transparent 62%, var(--color-stone-200) 62%, var(--color-stone-200) 92%, transparent 92%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0 0.15em;
+  }
+
+  .animation-delay-1000 { animation-delay: 1s; }
+  .animation-delay-2000 { animation-delay: 2s; }
+  .animation-delay-3000 { animation-delay: 3s; }
+}
