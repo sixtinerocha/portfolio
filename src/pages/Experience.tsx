@@ -177,7 +177,7 @@ export function Experience() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 relative">
         <AnimatedSection delay={0.1} direction="up" className="mb-14 sm:mb-20 relative">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-medium leading-[0.95] tracking-tight">
+          <h1 className="text-[2.7rem] sm:text-6xl md:text-7xl lg:text-8xl font-serif font-medium leading-[0.95] tracking-tight">
             MES EXPÉRIENCES<br />
             <span className="relative inline-block">
               <span className="relative z-10 pr-3">PROFESSIONNELLES</span>
