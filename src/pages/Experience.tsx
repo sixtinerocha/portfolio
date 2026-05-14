@@ -228,9 +228,9 @@ function ExperienceCard({ exp }: { exp: Experience; key?: Key }) {
           className={`relative px-6 sm:px-8 md:px-10 pt-8 pb-6 bg-stone-200/80 ${shapes.band}`}
         >
           <div className="flex items-start justify-between gap-4 flex-wrap">
-            <div className={`flex flex-col gap-3 max-w-[80%]`}>
+            <div className={`flex flex-col gap-3 w-full sm:max-w-[80%]`}>
               <span
-                className={`inline-block text-[11px] font-bold tracking-[0.22em] uppercase text-stone-700 bg-stone-50 px-3 py-1 rounded-full shadow-sm border border-stone-300/60 ${datePillTilt} self-start`}
+                className={`inline-block text-[11px] font-bold tracking-[0.16em] sm:tracking-[0.22em] uppercase text-stone-700 bg-stone-50 px-3 py-1 rounded-full shadow-sm border border-stone-300/60 ${datePillTilt} self-start whitespace-nowrap`}
               >
                 {exp.date}
               </span>

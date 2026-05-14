@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Mail } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/sixtine-rocha-8920a6229';
 const EMAIL = 'sixtine.rocha@supdepub.com';
+const PHONE = '07.82.76.63.68';
 
 export function Footer() {
   return (
@@ -57,6 +58,17 @@ export function Footer() {
               className="w-12 h-12 rounded-full bg-stone-800/80 hover:bg-stone-100 hover:text-stone-900 border border-stone-700/60 flex items-center justify-center text-stone-100 transition-colors shadow-md"
             >
               <Mail size={20} strokeWidth={1.8} />
+            </motion.a>
+
+            <motion.a
+              whileHover={{ y: -3 }}
+              whileTap={{ scale: 0.95 }}
+              href={`tel:${PHONE.replace(/\./g, '')}`}
+              aria-label="Appeler Sixtine"
+              title="Téléphone"
+              className="w-12 h-12 rounded-full bg-stone-800/80 hover:bg-stone-100 hover:text-stone-900 border border-stone-700/60 flex items-center justify-center text-stone-100 transition-colors shadow-md"
+            >
+              <Phone size={20} strokeWidth={1.8} />
             </motion.a>
           </div>
         </div>
