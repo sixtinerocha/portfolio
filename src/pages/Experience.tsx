@@ -33,15 +33,15 @@ const experiences: Experience[] = [
   {
     id: 0,
     role: 'ALTERNANCE\nASSISTANTE CHEF DE\nCAMPAGNE & CONTENT',
-    company: 'NAOS – ETAT PUR, LYON',
+    company: 'Groupe NAOS (Bioderma – Institut Esthederm – État Pur), Lyon',
     date: 'Septembre 2024 – Septembre 2026',
     description: [
+      'Aide au déploiement des campagnes média',
+      'Gestion des contenus UGC : brief, hook, validations',
       'Réflexion et planification des calendriers éditoriaux',
       'Création de contenus vidéos et photos (paid + organique)',
-      'Aide au déploiement des campagnes média',
-      "Participation à l'élaboration de concepts créatifs et briefs agences",
-      'Gestion des contenus UGC',
-      'Organisation de tournages (pharmacies, dermato, experts de la peau)',
+      'Élaboration de concepts créatifs et briefs agences',
+      'Organisation de tournages (pharmacies, dermatologue)',
       'Benchmark mensuel et veille des trends',
       'Reporting des KPI',
     ],
@@ -59,18 +59,19 @@ const experiences: Experience[] = [
     date: 'Août 2023 – Août 2024',
     description: [
       'Création de supports de communication (goodies, brochures, flyers…)',
-      'Gestion des différents réseaux sociaux',
+      'Gestion des réseaux sociaux en BtoB',
+      'Lancement et optimisation de campagnes SEA',
       'Collaboration avec des agences externes : rédaction cahier des charges, maquettes',
       'Stratégie SEO : articles + optimisation des sites web',
       "Campagnes d'emailing",
-      'Refonte sites web',
-      'Organisation salons professionnels et évènements en interne',
+      'Organisation salons professionnels',
     ],
     icons: [
       { kind: 'link', type: 'website',  href: 'https://www.breakee.fr',                                   label: 'Site Breakee (Aguila Technologies)' },
       { kind: 'link', type: 'linkedin', href: 'https://www.linkedin.com/company/aguila-technologie',    label: 'LinkedIn Aguila Technologies' },
     ],
     align: 'right',
+    extras: <AguilaExtras />,
   },
   {
     id: 2,
@@ -93,6 +94,7 @@ const experiences: Experience[] = [
       },
     ],
     align: 'left',
+    extras: <LeKoiExtras />,
   },
   {
     id: 3,
@@ -351,8 +353,8 @@ const FIGURES_2025: KeyMetric[] = [
     headline: '+108 %',
     headlineSuffix: 'followers vs 2024',
     details: [
-      'Détail : **+11,1K** followers gagnés sur l\'année 2025',
-      'VS 5,3K gagnés en 2024 (+26,6 % VS 2023)',
+      '**+11,1K** followers gagnés sur l\'année 2025',
+      'VS 5,3K gagnés en 2024 (**+26,6 %** VS 2023)',
     ],
   },
   {
@@ -360,7 +362,7 @@ const FIGURES_2025: KeyMetric[] = [
     headline: '+47 %',
     headlineSuffix: 'followers vs 2024',
     details: [
-      'Détail : **+3,7K** followers gagnés sur l\'année 2025',
+      '+3,7K followers gagnés sur l\'année 2025',
       "+40K j'aimes sur 2025",
       '+700 commentaires générés en 2025',
     ],
@@ -373,10 +375,10 @@ const FIGURES_T1_2026: KeyMetric[] = [
     headline: '+23,6 %',
     headlineSuffix: 'followers vs T1 2025',
     details: [
-      'Détail : **+3,8K** followers gagnés sur le T1 2026',
+      '**+3,8K** followers gagnés sur le T1 2026',
       'VS 3,1K gagnés sur le T1 2025',
-      "Taux d'engagement : **2,14 %** sur le T1 2026",
-      'Taux de complétion moyen : **25,5 %** (vs 20–30 % standard IG)',
+      "Taux d'engagement : **2,14 %**",
+      'Taux de complétion moyen : **25,5 %**',
     ],
   },
   {
@@ -384,11 +386,11 @@ const FIGURES_T1_2026: KeyMetric[] = [
     headline: '+295 %',
     headlineSuffix: 'followers vs T1 2025',
     details: [
-      'Détail : **+1,1K** followers gagnés sur le T1 2026',
+      '**+1,1K** followers gagnés',
       'VS 280 gagnés sur le T1 2025',
-      "Taux d'engagement : **3,49 %** sur le T1 2026",
-      "Nombre de j'aimes : **6,6K** sur le T1 2026",
-      'Nombre de commentaires : **222** sur le T1 2026',
+      "Taux d'engagement : **3,49 %**",
+      "+6,6K j’aimes sur le T1 2026",
+      '+222 commentaires',
     ],
   },
 ];
@@ -505,6 +507,97 @@ function FeedColumn({ src, alt, caption, rotate }: { src: string; alt: string; c
         {caption}
       </figcaption>
     </motion.figure>
+  );
+}
+
+/* ============================== AGUILA extras ============================== */
+
+function AguilaExtras() {
+  return (
+    <section>
+      <div className="flex items-center gap-3 mb-5">
+        <Sparkle className="!relative w-6 h-6 text-stone-500" />
+        <h5 className="font-serif text-xl md:text-2xl font-bold text-stone-900">
+          Quelques chiffres clés
+        </h5>
+      </div>
+      <div className="bg-white border border-stone-200/70 rounded-2xl shadow-sm p-5 md:p-6">
+        <ul className="space-y-3 text-[15px] md:text-base text-stone-700 font-medium">
+          <li className="flex items-start gap-2.5">
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
+            <span>17,5 % de taux d’engagement sur LinkedIn (vs 11 % N-1)</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
+            <span dangerouslySetInnerHTML={{ __html: 'Taux d’ouverture emailing : <span class="font-bold text-emerald-600">26,7 %</span>' }} />
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
+            <span dangerouslySetInnerHTML={{ __html: 'Taux de clics emailing : <span class="font-bold text-emerald-600">54,9 %</span>' }} />
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
+            <span>CTR moyen de 9 % sur les campagnes SEA</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ============================== LE KOI extras ============================== */
+
+function LeKoiExtras() {
+  return (
+    <section>
+      <div className="flex items-center gap-3 mb-5">
+        <Sparkle className="!relative w-6 h-6 text-stone-500" />
+        <h5 className="font-serif text-xl md:text-2xl font-bold text-stone-900">
+          Quelques chiffres clés
+        </h5>
+      </div>
+      <div className="bg-white border border-stone-200/70 rounded-2xl shadow-sm p-5 md:p-6 mb-8">
+        <ul className="space-y-3 text-[15px] md:text-base text-stone-700 font-medium">
+          <li className="flex items-start gap-2.5">
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
+            <span>100 % du restaurant rempli, soit 48 couverts</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
+            <span>Plus de 500 € récoltés pour les deux associations partenaires</span>
+          </li>
+          <li className="flex items-start gap-2.5">
+            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
+            <span>6K impressions sur les réseaux sociaux</span>
+          </li>
+        </ul>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4 sm:gap-6">
+        <motion.figure
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="bg-white border border-stone-200 rounded-2xl shadow-md p-3 sm:p-4 rotate-[-2deg]"
+        >
+          <div className="aspect-[4/3] overflow-hidden rounded-xl">
+            <img src="/assets/photos/restaurant-1.png" alt="Projet Restaurant 1" className="w-full h-full object-cover" />
+          </div>
+        </motion.figure>
+        <motion.figure
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="bg-white border border-stone-200 rounded-2xl shadow-md p-3 sm:p-4 rotate-[2deg]"
+        >
+          <div className="aspect-[4/3] overflow-hidden rounded-xl">
+            <img src="/assets/photos/restaurant-2.png" alt="Projet Restaurant 2" className="w-full h-full object-cover" />
+          </div>
+        </motion.figure>
+      </div>
+    </section>
   );
 }
 
