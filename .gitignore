@@ -8,3 +8,4 @@ dist
 # Raw draft assets — renamed copies live in public/assets/
 public/draft
 
+.venv
