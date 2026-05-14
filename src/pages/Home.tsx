@@ -22,7 +22,7 @@ const TYPEWRITER_PHRASES = [
   'CRÉATION DE CONTENU',
   'SOCIAL MEDIA',
   'BRAND CONTENT',
-  'MARKETING CRÉATIF',
+  'STRATÉGIE MÉDIA',
 ];
 
 export function Home() {
