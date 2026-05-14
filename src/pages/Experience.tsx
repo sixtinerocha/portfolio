@@ -122,7 +122,7 @@ const experiences: Experience[] = [
     company: 'IRIS&ARLO, MONTRÉAL',
     date: 'Janvier – Mai 2023',
     description: [
-      'Lancement de la marque',
+      'Lancement de la marque :',
       'Organisation et participation à des évènements',
       "Rédaction d'articles SEO",
       'Lancement du compte TikTok et création de contenu',
@@ -257,12 +257,15 @@ function ExperienceCard({ exp }: { exp: Experience; key?: Key }) {
         {/* Body */}
         <div className="px-6 sm:px-8 md:px-10 pt-7 pb-8 md:pb-10">
           <ul className="text-stone-700 text-[15px] md:text-base leading-relaxed font-medium space-y-1.5 list-none">
-            {exp.description.map((line, i) => (
-              <li key={i} className="flex gap-2.5">
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
-                <span>{line}</span>
-              </li>
-            ))}
+            {exp.description.map((line, i) => {
+              const isTitle = line.endsWith(':');
+              return (
+                <li key={i} className={`flex ${isTitle ? 'mb-2 mt-4 first:mt-0' : 'gap-2.5'}`}>
+                  {!isTitle && <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />}
+                  <span className={isTitle ? 'font-serif text-lg text-stone-900 font-bold' : ''}>{line}</span>
+                </li>
+              );
+            })}
           </ul>
 
           {exp.extras && <div className="mt-10">{exp.extras}</div>}
@@ -576,7 +579,7 @@ function LeKoiExtras() {
           <div className="flex items-start gap-3">
              <div className="w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0 mt-2.5" />
              <p className="leading-tight">
-               <span className="font-bold text-emerald-600 text-xl md:text-2xl tracking-tight">500 €</span>
+               <span className="font-bold text-emerald-600 text-xl md:text-2xl tracking-tight">+500 €</span>
                <span className="ml-2 text-stone-700 text-sm md:text-base font-medium">récoltés pour les deux associations partenaires</span>
              </p>
           </div>
