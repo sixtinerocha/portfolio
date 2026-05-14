@@ -33,7 +33,7 @@ const experiences: Experience[] = [
   {
     id: 0,
     role: 'ALTERNANCE\nASSISTANTE CHEF DE\nCAMPAGNE & CONTENT',
-    company: 'Groupe NAOS (Bioderma – Institut Esthederm – État Pur), Lyon',
+    company: 'Groupe NAOS (Bioderma – Institut Esthederm – Etat Pur), Lyon',
     date: 'Septembre 2024 – Septembre 2026',
     description: [
       'Aide au déploiement des campagnes média',
@@ -122,7 +122,7 @@ const experiences: Experience[] = [
     company: 'IRIS&ARLO, MONTRÉAL',
     date: 'Janvier – Mai 2023',
     description: [
-      'Lancement de la marque :',
+      'Lancement de la marque',
       'Organisation et participation à des évènements',
       "Rédaction d'articles SEO",
       'Lancement du compte TikTok et création de contenu',
@@ -353,8 +353,8 @@ const FIGURES_2025: KeyMetric[] = [
     headline: '+108 %',
     headlineSuffix: 'followers vs 2024',
     details: [
-      '**+11,1K** followers gagnés sur l\'année 2025',
-      'VS 5,3K gagnés en 2024 (**+26,6 %** VS 2023)',
+      '**11,1K** followers gagnés sur l\'année 2025',
+      'VS 5,3K gagnés en 2024 (**26,6 %** VS 2023)',
     ],
   },
   {
@@ -362,9 +362,9 @@ const FIGURES_2025: KeyMetric[] = [
     headline: '+47 %',
     headlineSuffix: 'followers vs 2024',
     details: [
-      '+3,7K followers gagnés sur l\'année 2025',
-      "+40K j'aimes sur 2025",
-      '+700 commentaires générés en 2025',
+      '3,7K followers gagnés sur l\'année 2025',
+      "40K j'aimes sur 2025",
+      '700 commentaires générés en 2025',
     ],
   },
 ];
@@ -375,8 +375,6 @@ const FIGURES_T1_2026: KeyMetric[] = [
     headline: '+23,6 %',
     headlineSuffix: 'followers vs T1 2025',
     details: [
-      '**+3,8K** followers gagnés sur le T1 2026',
-      'VS 3,1K gagnés sur le T1 2025',
       "Taux d'engagement : **2,14 %**",
       'Taux de complétion moyen : **25,5 %**',
     ],
@@ -386,11 +384,9 @@ const FIGURES_T1_2026: KeyMetric[] = [
     headline: '+295 %',
     headlineSuffix: 'followers vs T1 2025',
     details: [
-      '**+1,1K** followers gagnés',
-      'VS 280 gagnés sur le T1 2025',
       "Taux d'engagement : **3,49 %**",
-      "+6,6K j’aimes sur le T1 2026",
-      '+222 commentaires',
+      "6,6K j’aimes sur le T1 2026",
+      '222 commentaires',
     ],
   },
 ];
@@ -522,24 +518,36 @@ function AguilaExtras() {
         </h5>
       </div>
       <div className="bg-white border border-stone-200/70 rounded-2xl shadow-sm p-5 md:p-6">
-        <ul className="space-y-3 text-[15px] md:text-base text-stone-700 font-medium">
-          <li className="flex items-start gap-2.5">
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
-            <span>17,5 % de taux d’engagement sur LinkedIn (vs 11 % N-1)</span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
-            <span dangerouslySetInnerHTML={{ __html: 'Taux d’ouverture emailing : <span class="font-bold text-emerald-600">26,7 %</span>' }} />
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
-            <span dangerouslySetInnerHTML={{ __html: 'Taux de clics emailing : <span class="font-bold text-emerald-600">54,9 %</span>' }} />
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
-            <span>CTR moyen de 9 % sur les campagnes SEA</span>
-          </li>
-        </ul>
+        <div className="space-y-4">
+          <div className="flex items-start gap-3">
+             <div className="w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0 mt-2.5" />
+             <p className="leading-tight">
+               <span className="font-bold text-emerald-600 text-xl md:text-2xl tracking-tight">17,5 %</span>
+               <span className="ml-2 text-stone-700 text-sm md:text-base font-medium">de taux d’engagement sur LinkedIn (vs 11 % N-1)</span>
+             </p>
+          </div>
+          <div className="flex items-start gap-3">
+             <div className="w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0 mt-2.5" />
+             <p className="leading-tight">
+               <span className="font-bold text-emerald-600 text-xl md:text-2xl tracking-tight">26,7 %</span>
+               <span className="ml-2 text-stone-700 text-sm md:text-base font-medium">de taux d’ouverture emailing</span>
+             </p>
+          </div>
+          <div className="flex items-start gap-3">
+             <div className="w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0 mt-2.5" />
+             <p className="leading-tight">
+               <span className="font-bold text-emerald-600 text-xl md:text-2xl tracking-tight">54,9 %</span>
+               <span className="ml-2 text-stone-700 text-sm md:text-base font-medium">de taux de clics emailing</span>
+             </p>
+          </div>
+          <div className="flex items-start gap-3">
+             <div className="w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0 mt-2.5" />
+             <p className="leading-tight">
+               <span className="font-bold text-emerald-600 text-xl md:text-2xl tracking-tight">9 %</span>
+               <span className="ml-2 text-stone-700 text-sm md:text-base font-medium">de CTR moyen sur les campagnes SEA</span>
+             </p>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -557,23 +565,32 @@ function LeKoiExtras() {
         </h5>
       </div>
       <div className="bg-white border border-stone-200/70 rounded-2xl shadow-sm p-5 md:p-6 mb-8">
-        <ul className="space-y-3 text-[15px] md:text-base text-stone-700 font-medium">
-          <li className="flex items-start gap-2.5">
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
-            <span>100 % du restaurant rempli, soit 48 couverts</span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
-            <span>Plus de 500 € récoltés pour les deux associations partenaires</span>
-          </li>
-          <li className="flex items-start gap-2.5">
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0" />
-            <span>6K impressions sur les réseaux sociaux</span>
-          </li>
-        </ul>
+        <div className="space-y-4">
+          <div className="flex items-start gap-3">
+             <div className="w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0 mt-2.5" />
+             <p className="leading-tight">
+               <span className="font-bold text-emerald-600 text-xl md:text-2xl tracking-tight">100 %</span>
+               <span className="ml-2 text-stone-700 text-sm md:text-base font-medium">du restaurant rempli, soit 48 couverts</span>
+             </p>
+          </div>
+          <div className="flex items-start gap-3">
+             <div className="w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0 mt-2.5" />
+             <p className="leading-tight">
+               <span className="font-bold text-emerald-600 text-xl md:text-2xl tracking-tight">500 €</span>
+               <span className="ml-2 text-stone-700 text-sm md:text-base font-medium">récoltés pour les deux associations partenaires</span>
+             </p>
+          </div>
+          <div className="flex items-start gap-3">
+             <div className="w-1.5 h-1.5 rounded-full bg-stone-400 shrink-0 mt-2.5" />
+             <p className="leading-tight">
+               <span className="font-bold text-emerald-600 text-xl md:text-2xl tracking-tight">6K</span>
+               <span className="ml-2 text-stone-700 text-sm md:text-base font-medium">impressions sur les réseaux sociaux</span>
+             </p>
+          </div>
+        </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 sm:gap-6">
+      <div className="grid grid-cols-2 gap-4 sm:gap-6 items-center">
         <motion.figure
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -592,7 +609,7 @@ function LeKoiExtras() {
           transition={{ duration: 0.7 }}
           className="bg-white border border-stone-200 rounded-2xl shadow-md p-3 sm:p-4 rotate-[2deg]"
         >
-          <div className="aspect-[4/3] overflow-hidden rounded-xl">
+          <div className="aspect-[3/4] overflow-hidden rounded-xl">
             <img src="/assets/photos/restaurant-2.png" alt="Projet Restaurant 2" className="w-full h-full object-cover" />
           </div>
         </motion.figure>
