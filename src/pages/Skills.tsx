@@ -78,7 +78,7 @@ const kpiAndEmailingTools = [
   { src: '/assets/software/hootsuite.png', label: 'Hootsuite' },
   { src: '/assets/software/facelift.png',  label: 'Facelift' },
   { src: '/assets/software/meta-bs.png',   label: 'Meta Business Suite' },
-  { src: '/assets/software/tiktok-cc.jpg', label: 'TikTok Creative Center' },
+  { src: '/assets/software/tiktok-cc.png', label: 'TikTok Creative Center' },
   { src: '/assets/software/mailjet.png',   label: 'Mailjet' },
 ];
 
@@ -292,16 +292,11 @@ function BrandTile({ src, alt }: { src: string; alt: string; key?: Key }) {
     <motion.div
       whileHover={{ y: -4, scale: 1.04 }}
       transition={{ type: 'spring', stiffness: 320, damping: 22 }}
-      className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-center justify-center p-1 cursor-default overflow-hidden"
+      className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white border border-stone-200 shadow-sm flex items-center justify-center p-0.5 cursor-default overflow-hidden"
       title={alt}
       aria-label={alt}
     >
-      <img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        className="w-full h-full object-contain"
-      />
+      <img src={src} alt={alt} loading="lazy" className="w-full h-full object-contain mix-blend-multiply" />
     </motion.div>
   );
 }
@@ -313,7 +308,7 @@ function BrandLogo({ src, alt, bg, isHootsuite }: { src: string; alt: string; bg
       transition={{ type: 'spring', stiffness: 320, damping: 22 }}
       className={`rounded-xl flex items-center justify-center cursor-default ${
         bg === 'dark' ? 'bg-white/95 border border-white/10 shadow-sm' : 'bg-stone-100 border border-stone-200'
-      } ${isHootsuite ? 'h-14 md:h-16 px-2' : 'h-11 md:h-12 px-3'}`}
+      } ${isHootsuite ? 'h-14 md:h-16 px-1' : 'h-10 md:h-11 px-2'}`}
       title={alt}
       aria-label={alt}
     >
@@ -321,9 +316,7 @@ function BrandLogo({ src, alt, bg, isHootsuite }: { src: string; alt: string; bg
         src={src}
         alt={alt}
         loading="lazy"
-        className={`${isHootsuite ? 'h-10 md:h-12' : 'h-8 md:h-9'} w-auto max-w-[170px] object-contain ${
-          alt.includes('TikTok') || alt.includes('Meta') ? 'mix-blend-multiply' : ''
-        }`}
+        className={`${isHootsuite ? 'h-12 md:h-14' : 'h-8 md:h-9'} w-auto max-w-[160px] object-contain mix-blend-multiply`}
       />
     </motion.div>
   );
