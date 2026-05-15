@@ -153,9 +153,26 @@ export function About() {
             </div>
 
             <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex flex-col items-center">
-              <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[280px] sm:max-w-[300px] mx-auto lg:mx-0">
-                {/* Arrow pointing FROM graph TO text */}
-                <HandDrawnArrow className="hidden lg:block absolute -left-32 top-[20%] w-32 h-32 text-stone-800 scale-x-[-1] -rotate-[45deg] z-10 drop-shadow-sm" />
+              <AnimatedSection delay={0.4} direction="up" className="relative w-full mx-auto lg:mx-0">
+                {/* Arrow pointing FROM graph TO text like a bridge */}
+                <svg className="hidden lg:block absolute -left-20 top-[0%] w-32 h-32 text-stone-600 z-10 drop-shadow-sm pointer-events-none" viewBox="0 0 100 100" fill="none">
+                  <motion.path
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.2, ease: "easeInOut" }}
+                    d="M 90 60 C 80 -10, 20 -10, 5 40"
+                    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none"
+                  />
+                  <motion.path
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1, duration: 0.3 }}
+                    d="M 5 40 L 17 32 M 5 40 L 15 48"
+                    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"
+                  />
+                </svg>
                 
                 <div className="relative bg-white p-5 sm:p-6 rounded-[2rem] shadow-xl border border-stone-200/60 z-10 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
                   <p className="mb-5 text-center font-serif italic text-base text-stone-600 font-medium">
@@ -171,8 +188,8 @@ export function About() {
                 <Scribble className="-bottom-10 -right-6 w-24 h-8 text-stone-400/60 -rotate-[15deg] hidden sm:block z-0" />
               </AnimatedSection>
 
-              <AnimatedSection delay={0.5} direction="up" className="mt-12 lg:mt-16 w-full max-w-[340px] mx-auto lg:mx-0">
-                <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-1 sm:gap-y-3 sm:gap-x-2">
+              <AnimatedSection delay={0.5} direction="up" className="mt-12 lg:mt-16 w-full mx-auto lg:mx-0">
+                <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-2 sm:gap-y-3 sm:gap-x-3">
                   {[
                     "Écoute active", "Sens du collectif", "Organisation", "Patience",
                     "Empathie", "Rigueur", "Discrétion", "Persévérance",
