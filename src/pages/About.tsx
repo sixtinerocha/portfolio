@@ -81,6 +81,113 @@ export function About() {
           </div>
         </section>
 
+        {/* ============================ PROFIL DE COLLABORATION ============================ */}
+        <section className="mb-32 sm:mb-40 relative">
+          <AnimatedSection delay={0.1} direction="up" className="mb-12 relative inline-block z-10">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold leading-[0.95] tracking-tight uppercase">
+              Mon profil de <br/>
+              <span className="relative inline-block">
+                <span className="relative z-10 pr-3">collaboration</span>
+                <TitleUnderline className="bottom-0 sm:bottom-1 left-0 w-full h-5 sm:h-6" delay={0.3} />
+              </span><br/>
+              <span className="text-3xl sm:text-4xl md:text-5xl text-stone-500 mt-2 block">en entreprise</span>
+            </h2>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            <div className="lg:col-span-7 space-y-8 relative z-10">
+              <AnimatedSection
+                delay={0.2}
+                direction="up"
+                className="bg-white/85 backdrop-blur-md p-7 sm:p-9 rounded-[2rem] shadow-sm border border-stone-200/60 space-y-6 text-stone-800 leading-relaxed text-base sm:text-lg"
+              >
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <h3 className="font-serif font-bold text-xl sm:text-2xl text-stone-900">
+                    Savoir être : Profil Supporteur / Coordinateur
+                  </h3>
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-[0.2em] bg-emerald-100 text-emerald-800 border border-emerald-200 shadow-sm">
+                    Personnalité verte
+                  </span>
+                </div>
+
+                <p>
+                  Le compte rendu indique une personnalité Supporteur / Coordinateur, avec une énergie verte dominante : une approche orientée vers l’écoute, la stabilité, la collaboration et l’organisation.
+                </p>
+
+                <div>
+                  <p className="mb-3 font-medium">Selon le compte rendu Insights Discovery®, en contexte professionnel mon profil se distingue par :</p>
+                  <ul className="space-y-2.5 pl-2 list-none">
+                    {[
+                      "Capacité à créer un climat de confiance dans une équipe",
+                      "Respect des procédures, des délais et des engagements",
+                      "Attention portée aux détails et à la qualité d’exécution",
+                      "Compréhension des besoins des autres avant d’agir",
+                      "Posture calme dans les échanges et les situations de tension",
+                      "Travail structuré, régulier et orienté vers le collectif"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="text-emerald-500 mt-1.5 text-xs">●</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <p>
+                  Le profil met aussi en avant une façon de travailler méthodique, attentive aux détails et tournée vers le collectif. Une posture qui favorise la cohésion d’équipe, la qualité d’exécution et une collaboration durable.
+                </p>
+
+                <div className="pt-4">
+                  <a
+                    href="/assets/documents/insight-sixtine-rocha.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center gap-3 bg-emerald-700 text-white px-6 py-3.5 rounded-full font-bold uppercase tracking-[0.15em] text-xs hover:bg-emerald-800 transition-colors duration-300 shadow-md"
+                  >
+                    Voir le compte rendu complet
+                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                  </a>
+                </div>
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.3} direction="up">
+                <div className="flex flex-wrap gap-2.5">
+                  {[
+                    "Écoute active", "Sens du collectif", "Organisation", "Patience",
+                    "Empathie", "Rigueur", "Discrétion", "Persévérance",
+                    "Sens du service", "Conscience professionnelle", "Esprit d’équipe"
+                  ].map((skill, i) => (
+                    <motion.span
+                      whileHover={{ y: -2 }}
+                      key={i}
+                      className="px-4 py-2 rounded-full bg-stone-100/90 border border-stone-200 text-stone-800 font-serif italic text-sm md:text-base cursor-default"
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
+                </div>
+              </AnimatedSection>
+            </div>
+
+            <div className="lg:col-span-5 relative mt-4 lg:mt-0">
+              <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+                <div className="relative bg-white p-5 sm:p-6 rounded-[2rem] shadow-xl border border-stone-200/60 z-10 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <img
+                    src="/assets/documents/insights-graph.png"
+                    alt="Graphique Insights Discovery"
+                    loading="lazy"
+                    className="w-full h-auto rounded-xl object-contain mix-blend-multiply"
+                  />
+                  <p className="mt-5 text-center font-serif italic text-sm text-stone-500">
+                    Extrait du test Insights Discovery®
+                  </p>
+                </div>
+                <Scribble className="-bottom-10 -right-6 w-24 h-8 text-stone-400/60 -rotate-[15deg] hidden sm:block z-0" />
+              </AnimatedSection>
+            </div>
+          </div>
+        </section>
+
         {/* ============================ POURQUOI MOI ? ============================ */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start relative">
 
