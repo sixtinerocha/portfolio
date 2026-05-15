@@ -30,10 +30,10 @@ const expertise: Chip[] = [
 
   { label: 'Social media',        style: 'dark',  rotate: -6, size: 'xl', marginY: '-mt-4' },
   { label: 'Webmarketing',        style: 'taupe', rotate: 4,  size: 'md', marginX: '-ml-3' },
-  { label: 'Social Media Ads',    style: 'dark',  rotate: -4, size: 'lg', marginX: '-ml-2', marginY: '-mt-3' },
+  { label: 'Social Media Ads',    style: 'cream', rotate: -4, size: 'lg', marginX: '-ml-2', marginY: '-mt-3' },
 
-  { label: 'SEO',                 style: 'cream', rotate: 2,  size: 'md', marginY: '-mt-2' },
-  { label: 'Gestion de projet',   style: 'paper', rotate: -3, size: 'md', marginX: '-ml-3' },
+  { label: 'SEO',                 style: 'paper', rotate: 2,  size: 'md', marginY: '-mt-2' },
+  { label: 'Gestion de projet',   style: 'cream', rotate: -3, size: 'md', marginX: '-ml-3' },
 ];
 
 const chipClass: Record<ChipStyle, string> = {
@@ -50,7 +50,19 @@ const chipSize: Record<NonNullable<Chip['size']>, string> = {
   xl: 'px-8 py-4 text-2xl sm:text-3xl md:text-4xl',
 };
 
-const softSkills = ['Créativité', 'Organisation', "Esprit d'équipe", 'Curiosité', 'Bienveillance'];
+const softSkills = [
+  'Écoute active',
+  'Sens du collectif',
+  'Organisation',
+  'Patience',
+  'Empathie',
+  'Rigueur',
+  'Discrétion',
+  'Persévérance',
+  'Sens du service',
+  'Conscience professionnelle',
+  'Esprit d’équipe',
+];
 
 const socialIcons = [
   { src: '/assets/social/instagram.svg', label: 'Instagram' },
@@ -58,21 +70,26 @@ const socialIcons = [
   { src: '/assets/social/linkedin.svg',  label: 'LinkedIn' },
   { src: '/assets/social/facebook.svg',  label: 'Facebook' },
   { src: '/assets/social/youtube.svg',   label: 'YouTube' },
+  { src: '/assets/social/bereal.svg',    label: 'BeReal' },
 ];
 
-const emailingTools = [
+const kpiAndEmailingTools = [
   { src: '/assets/software/buffer.png',    label: 'Buffer' },
-  { src: '/assets/software/mailjet.png',   label: 'Sinch Mailjet' },
   { src: '/assets/software/hootsuite.png', label: 'Hootsuite' },
   { src: '/assets/software/facelift.png',  label: 'Facelift' },
+  { src: '/assets/software/meta-bs.png',   label: 'Meta Business Suite' },
+  { src: '/assets/software/tiktok-cc.jpg', label: 'TikTok Creative Center' },
+  { src: '/assets/software/mailjet.png',   label: 'Mailjet' },
 ];
 
 const designTools = [
   { src: '/assets/software/canva.png',       label: 'Canva' },
+  { src: '/assets/software/figma.png',       label: 'Figma' },
   { src: '/assets/software/illustrator.png', label: 'Adobe Illustrator' },
   { src: '/assets/software/photoshop.png',   label: 'Adobe Photoshop' },
   { src: '/assets/software/lightroom.png',   label: 'Adobe Lightroom' },
   { src: '/assets/software/capcut.svg',      label: 'CapCut' },
+  { src: '/assets/software/omi.svg',         label: 'OMI' },
 ];
 
 const officeTools = [
@@ -176,15 +193,15 @@ export function Skills() {
               </div>
             </SoftwareCard>
 
-            <SoftwareCard title="Programmation, emailing" tone="dark" className="lg:col-span-2">
+            <SoftwareCard title="Programmation, analyse KPI'S, emailing" tone="dark" className="lg:col-span-2">
               <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
-                {emailingTools.map((s) => (
-                  <BrandLogo key={s.label} src={s.src} alt={s.label} bg="dark" />
+                {kpiAndEmailingTools.map((s) => (
+                  <BrandLogo key={s.label} src={s.src} alt={s.label} bg="dark" isHootsuite={s.label === 'Hootsuite'} />
                 ))}
               </div>
             </SoftwareCard>
 
-            <SoftwareCard title="Création de visuels" tone="light" className="lg:col-span-3">
+            <SoftwareCard title="Création" tone="light" className="lg:col-span-3">
               <div className="flex flex-wrap gap-3">
                 {designTools.map((s) => (
                   <BrandTile key={s.label} src={s.src} alt={s.label} />
@@ -284,18 +301,23 @@ function BrandTile({ src, alt }: { src: string; alt: string; key?: Key }) {
   );
 }
 
-function BrandLogo({ src, alt, bg }: { src: string; alt: string; bg: 'light' | 'dark'; key?: Key }) {
+function BrandLogo({ src, alt, bg, isHootsuite }: { src: string; alt: string; bg: 'light' | 'dark'; isHootsuite?: boolean; key?: Key }) {
   return (
     <motion.div
       whileHover={{ y: -4, scale: 1.04 }}
       transition={{ type: 'spring', stiffness: 320, damping: 22 }}
-      className={`h-10 md:h-11 px-3 rounded-xl flex items-center justify-center cursor-default ${
+      className={`rounded-xl flex items-center justify-center cursor-default ${
         bg === 'dark' ? 'bg-white/95 border border-white/10 shadow-sm' : 'bg-stone-100 border border-stone-200'
-      }`}
+      } ${isHootsuite ? 'h-14 md:h-16 px-2' : 'h-10 md:h-11 px-3'}`}
       title={alt}
       aria-label={alt}
     >
-      <img src={src} alt={alt} loading="lazy" className="h-7 md:h-8 w-auto max-w-[160px] object-contain" />
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className={`${isHootsuite ? 'h-10 md:h-12' : 'h-7 md:h-8'} w-auto max-w-[160px] object-contain`}
+      />
     </motion.div>
   );
 }
