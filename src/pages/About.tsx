@@ -12,6 +12,7 @@ import {
   CoffeeCup,
   Scribble,
   TitleUnderline,
+  HandDrawnArrow,
 } from '../components/DecorativeShapes';
 
 export function About() {
@@ -87,7 +88,7 @@ export function About() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold leading-[0.95] tracking-tight uppercase">
               Mon profil de <br/>
               <span className="relative inline-block">
-                <span className="relative z-10 pr-3">collaboration</span>
+                <span className="relative z-10 pr-3">collaboratrice</span>
                 <TitleUnderline className="bottom-0 sm:bottom-1 left-0 w-full h-5 sm:h-6" delay={0.3} />
               </span><br/>
               <span className="text-3xl sm:text-4xl md:text-5xl text-stone-500 mt-2 block">en entreprise</span>
@@ -149,28 +150,13 @@ export function About() {
                   </a>
                 </div>
               </AnimatedSection>
-
-              <AnimatedSection delay={0.3} direction="up">
-                <div className="flex flex-wrap gap-2.5">
-                  {[
-                    "Écoute active", "Sens du collectif", "Organisation", "Patience",
-                    "Empathie", "Rigueur", "Discrétion", "Persévérance",
-                    "Sens du service", "Conscience professionnelle", "Esprit d’équipe"
-                  ].map((skill, i) => (
-                    <motion.span
-                      whileHover={{ y: -2 }}
-                      key={i}
-                      className="px-4 py-2 rounded-full bg-stone-100/90 border border-stone-200 text-stone-800 font-serif italic text-sm md:text-base cursor-default"
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </div>
-              </AnimatedSection>
+              
+              {/* Hand drawn arrow pointing from text to graph */}
+              <HandDrawnArrow className="hidden lg:block absolute -right-12 top-[40%] w-20 h-20 text-stone-400 rotate-[70deg] z-0" />
             </div>
 
-            <div className="lg:col-span-5 relative mt-4 lg:mt-0">
-              <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[320px] sm:max-w-sm mx-auto lg:mx-0 lg:ml-auto">
+            <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex flex-col items-center lg:items-end">
+              <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[280px] sm:max-w-[300px] mx-auto lg:mx-0 lg:ml-auto">
                 <div className="relative bg-white p-5 sm:p-6 rounded-[2rem] shadow-xl border border-stone-200/60 z-10 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
                   <p className="mb-5 text-center font-serif italic text-base text-stone-600 font-medium">
                     Extrait du test Insights Discovery®
@@ -183,6 +169,24 @@ export function About() {
                   />
                 </div>
                 <Scribble className="-bottom-10 -right-6 w-24 h-8 text-stone-400/60 -rotate-[15deg] hidden sm:block z-0" />
+              </AnimatedSection>
+
+              <AnimatedSection delay={0.5} direction="up" className="mt-10 lg:mt-12 w-full max-w-sm mx-auto lg:mx-0 lg:ml-auto">
+                <div className="flex flex-wrap gap-2.5 justify-center lg:justify-end">
+                  {[
+                    "Écoute active", "Sens du collectif", "Organisation", "Patience",
+                    "Empathie", "Rigueur", "Discrétion", "Persévérance",
+                    "Sens du service", "Conscience professionnelle", "Esprit d’équipe"
+                  ].map((skill, i) => (
+                    <motion.span
+                      whileHover={{ y: -2 }}
+                      key={i}
+                      className="px-4 py-2 rounded-full bg-stone-100/90 border border-stone-200 text-stone-800 font-serif italic text-xs sm:text-sm cursor-default shadow-sm"
+                    >
+                      {skill}
+                    </motion.span>
+                  ))}
+                </div>
               </AnimatedSection>
             </div>
           </div>
