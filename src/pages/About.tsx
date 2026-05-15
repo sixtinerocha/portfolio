@@ -155,13 +155,13 @@ export function About() {
             <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex flex-col items-center">
               <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[300px] lg:max-w-[340px] mx-auto lg:mx-0">
                 {/* Arrow pointing FROM graph TO text like a bridge */}
-                <svg className="hidden lg:block absolute -left-20 top-[0%] w-32 h-32 text-stone-600 z-10 drop-shadow-sm pointer-events-none" viewBox="0 0 100 100" fill="none">
+                <svg className="hidden lg:block absolute -left-32 -top-6 w-56 h-32 text-stone-600 z-10 drop-shadow-sm pointer-events-none" viewBox="0 0 150 100" fill="none">
                   <motion.path
                     initial={{ pathLength: 0 }}
                     whileInView={{ pathLength: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.2, ease: "easeInOut" }}
-                    d="M 90 60 C 80 -10, 20 -10, 5 40"
+                    d="M 140 70 C 110 -10, 40 -10, 5 45"
                     stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none"
                   />
                   <motion.path
@@ -169,7 +169,7 @@ export function About() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 1, duration: 0.3 }}
-                    d="M 17 32 L 5 40 L 15 48"
+                    d="M 5 45 L 20 35 M 5 45 L 15 58"
                     stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"
                   />
                 </svg>
