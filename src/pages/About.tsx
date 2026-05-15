@@ -155,7 +155,7 @@ export function About() {
             <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex flex-col items-center lg:items-end">
               <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[280px] sm:max-w-[300px] mx-auto lg:mx-0 lg:ml-auto">
                 {/* Arrow pointing FROM graph TO text */}
-                <HandDrawnArrow className="hidden lg:block absolute -left-28 top-[30%] w-28 h-28 text-stone-500 scale-x-[-1] -rotate-[15deg] z-0" />
+                <HandDrawnArrow className="hidden lg:block absolute -left-32 top-[15%] w-32 h-32 text-stone-800 scale-x-[-1] -rotate-[10deg] z-10 drop-shadow-md" />
                 
                 <div className="relative bg-white p-5 sm:p-6 rounded-[2rem] shadow-xl border border-stone-200/60 z-10 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
                   <p className="mb-5 text-center font-serif italic text-base text-stone-600 font-medium">
@@ -172,29 +172,28 @@ export function About() {
               </AnimatedSection>
 
               <AnimatedSection delay={0.5} direction="up" className="mt-12 lg:mt-16 w-full max-w-[340px] mx-auto lg:mx-0 lg:ml-auto">
-                <div className="flex flex-wrap gap-x-3 gap-y-4 justify-center lg:justify-end pr-2">
+                <div className="flex flex-wrap items-center justify-center lg:justify-end gap-y-2 gap-x-1 sm:gap-y-3 sm:gap-x-2 pr-2">
                   {[
                     "Écoute active", "Sens du collectif", "Organisation", "Patience",
                     "Empathie", "Rigueur", "Discrétion", "Persévérance",
                     "Sens du service", "Conscience professionnelle", "Esprit d’équipe"
                   ].map((skill, i) => {
-                    const colors = [
-                      'bg-orange-100/90 text-orange-900 border-orange-200',
-                      'bg-rose-100/90 text-rose-900 border-rose-200',
-                      'bg-emerald-100/90 text-emerald-900 border-emerald-200',
-                      'bg-blue-100/90 text-blue-900 border-blue-200',
-                      'bg-amber-100/90 text-amber-900 border-amber-200',
-                      'bg-violet-100/90 text-violet-900 border-violet-200',
+                    const styles = [
+                      'bg-stone-900 text-stone-50', // dark
+                      'bg-stone-400 text-white', // taupe
+                      'bg-stone-200 text-stone-900', // cream
+                      'bg-stone-50 text-stone-900 border border-stone-300', // paper
                     ];
-                    const color = colors[i % colors.length];
-                    const rotate = [-4, 3, -2, 5, -3, 2, -5, 4, -1, 3, -2][i];
+                    const styleClass = styles[i % styles.length];
+                    const rotate = [-6, 4, -3, 5, -5, 2, -4, 6, -2, 3, -5][i];
                     return (
                       <motion.span
-                        whileHover={{ scale: 1.1, rotate: 0, zIndex: 20 }}
-                        initial={{ rotate }}
-                        animate={{ rotate }}
+                        whileHover={{ scale: 1.08, rotate: 0, zIndex: 20 }}
+                        initial={{ opacity: 0, rotate }}
+                        whileInView={{ opacity: 1, rotate }}
+                        viewport={{ once: true }}
                         key={i}
-                        className={`px-4 py-2 rounded-full border shadow-sm font-serif italic text-xs sm:text-sm cursor-default relative inline-block ${color}`}
+                        className={`px-4 py-2 rounded-full shadow-sm font-serif italic text-xs sm:text-sm cursor-default relative inline-block ${styleClass}`}
                       >
                         {skill}
                       </motion.span>
