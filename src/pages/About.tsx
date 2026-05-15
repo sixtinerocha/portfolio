@@ -150,13 +150,13 @@ export function About() {
                   </a>
                 </div>
               </AnimatedSection>
-              
-              {/* Hand drawn arrow pointing from text to graph */}
-              <HandDrawnArrow className="hidden lg:block absolute -right-12 top-[40%] w-20 h-20 text-stone-400 rotate-[70deg] z-0" />
             </div>
 
             <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex flex-col items-center lg:items-end">
-              <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[280px] sm:max-w-[300px] mx-auto lg:mx-0 lg:ml-auto">
+              {/* Hand drawn arrow pointing from graph to text */}
+              <HandDrawnArrow className="hidden lg:block absolute -left-20 top-[30%] w-28 h-28 text-stone-500/80 -scale-x-100 -rotate-12 z-0" />
+              
+              <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[240px] sm:max-w-[260px] mx-auto lg:mx-0 lg:ml-auto">
                 <div className="relative bg-white p-5 sm:p-6 rounded-[2rem] shadow-xl border border-stone-200/60 z-10 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
                   <p className="mb-5 text-center font-serif italic text-base text-stone-600 font-medium">
                     Extrait du test Insights Discovery®
@@ -171,19 +171,27 @@ export function About() {
                 <Scribble className="-bottom-10 -right-6 w-24 h-8 text-stone-400/60 -rotate-[15deg] hidden sm:block z-0" />
               </AnimatedSection>
 
-              <AnimatedSection delay={0.5} direction="up" className="mt-10 lg:mt-12 w-full max-w-sm mx-auto lg:mx-0 lg:ml-auto">
-                <div className="flex flex-wrap gap-2.5 justify-center lg:justify-end">
+              <AnimatedSection delay={0.5} direction="up" className="mt-12 lg:mt-16 w-full max-w-sm mx-auto lg:mx-0 lg:ml-auto">
+                <div className="flex flex-wrap gap-x-3 gap-y-4 justify-center lg:justify-end">
                   {[
-                    "Écoute active", "Sens du collectif", "Organisation", "Patience",
-                    "Empathie", "Rigueur", "Discrétion", "Persévérance",
-                    "Sens du service", "Conscience professionnelle", "Esprit d’équipe"
+                    { label: "Écoute active", cls: "bg-emerald-50 text-emerald-800 border-emerald-200 rotate-[-2deg]" },
+                    { label: "Sens du collectif", cls: "bg-stone-100 text-stone-800 border-stone-200 rotate-[3deg]" },
+                    { label: "Organisation", cls: "bg-amber-50 text-amber-800 border-amber-200 rotate-[-1deg]" },
+                    { label: "Patience", cls: "bg-sky-50 text-sky-800 border-sky-200 rotate-[2deg]" },
+                    { label: "Empathie", cls: "bg-rose-50 text-rose-800 border-rose-200 rotate-[-3deg]" },
+                    { label: "Rigueur", cls: "bg-stone-800 text-stone-100 border-stone-700 rotate-[1deg]" },
+                    { label: "Discrétion", cls: "bg-stone-100 text-stone-800 border-stone-200 rotate-[-2deg]" },
+                    { label: "Persévérance", cls: "bg-emerald-50 text-emerald-800 border-emerald-200 rotate-[3deg]" },
+                    { label: "Sens du service", cls: "bg-amber-50 text-amber-800 border-amber-200 rotate-[1deg]" },
+                    { label: "Conscience pro.", cls: "bg-stone-100 text-stone-800 border-stone-200 rotate-[-1deg]" },
+                    { label: "Esprit d’équipe", cls: "bg-sky-50 text-sky-800 border-sky-200 rotate-[2deg]" }
                   ].map((skill, i) => (
                     <motion.span
-                      whileHover={{ y: -2 }}
+                      whileHover={{ scale: 1.05, rotate: 0 }}
                       key={i}
-                      className="px-4 py-2 rounded-full bg-stone-100/90 border border-stone-200 text-stone-800 font-serif italic text-xs sm:text-sm cursor-default shadow-sm"
+                      className={`px-4 py-2 rounded-full border font-serif italic text-sm shadow-sm cursor-default transition-colors ${skill.cls}`}
                     >
-                      {skill}
+                      {skill.label}
                     </motion.span>
                   ))}
                 </div>
