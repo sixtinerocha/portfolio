@@ -95,7 +95,7 @@ export function About() {
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
             <div className="lg:col-span-7 space-y-8 relative z-10">
               <AnimatedSection
                 delay={0.2}
@@ -152,10 +152,10 @@ export function About() {
               </AnimatedSection>
             </div>
 
-            <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex flex-col items-center lg:items-end">
-              <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[280px] sm:max-w-[300px] mx-auto lg:mx-0 lg:ml-auto">
+            <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex flex-col items-center">
+              <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[280px] sm:max-w-[300px] mx-auto lg:mx-0">
                 {/* Arrow pointing FROM graph TO text */}
-                <HandDrawnArrow className="hidden lg:block absolute -left-32 top-[15%] w-32 h-32 text-stone-800 scale-x-[-1] -rotate-[10deg] z-10 drop-shadow-md" />
+                <HandDrawnArrow className="hidden lg:block absolute -left-32 top-[20%] w-32 h-32 text-stone-800 scale-x-[-1] -rotate-[45deg] z-10 drop-shadow-sm" />
                 
                 <div className="relative bg-white p-5 sm:p-6 rounded-[2rem] shadow-xl border border-stone-200/60 z-10 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
                   <p className="mb-5 text-center font-serif italic text-base text-stone-600 font-medium">
@@ -171,8 +171,8 @@ export function About() {
                 <Scribble className="-bottom-10 -right-6 w-24 h-8 text-stone-400/60 -rotate-[15deg] hidden sm:block z-0" />
               </AnimatedSection>
 
-              <AnimatedSection delay={0.5} direction="up" className="mt-12 lg:mt-16 w-full max-w-[340px] mx-auto lg:mx-0 lg:ml-auto">
-                <div className="flex flex-wrap items-center justify-center lg:justify-end gap-y-2 gap-x-1 sm:gap-y-3 sm:gap-x-2 pr-2">
+              <AnimatedSection delay={0.5} direction="up" className="mt-12 lg:mt-16 w-full max-w-[340px] mx-auto lg:mx-0">
+                <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-1 sm:gap-y-3 sm:gap-x-2">
                   {[
                     "Écoute active", "Sens du collectif", "Organisation", "Patience",
                     "Empathie", "Rigueur", "Discrétion", "Persévérance",
@@ -193,7 +193,7 @@ export function About() {
                         whileInView={{ opacity: 1, rotate }}
                         viewport={{ once: true }}
                         key={i}
-                        className={`px-4 py-2 rounded-full shadow-sm font-serif italic text-xs sm:text-sm cursor-default relative inline-block ${styleClass}`}
+                        className={`px-4 py-2 rounded-full shadow-sm font-serif italic text-sm sm:text-base cursor-default relative inline-block ${styleClass}`}
                       >
                         {skill}
                       </motion.span>
