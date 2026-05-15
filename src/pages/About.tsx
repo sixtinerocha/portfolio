@@ -142,7 +142,7 @@ export function About() {
                     href="/assets/documents/insight-sixtine-rocha.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center justify-center gap-3 bg-emerald-700 text-white px-6 py-3.5 rounded-full font-bold uppercase tracking-[0.15em] text-xs hover:bg-emerald-800 transition-colors duration-300 shadow-md"
+                    className="group inline-flex items-center justify-center gap-3 bg-stone-900 text-white px-7 py-3.5 rounded-full font-bold uppercase tracking-[0.18em] text-xs hover:bg-stone-700 transition-colors duration-300 shadow-lg cursor-pointer"
                   >
                     Voir le compte rendu complet
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -170,17 +170,17 @@ export function About() {
             </div>
 
             <div className="lg:col-span-5 relative mt-4 lg:mt-0">
-              <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+              <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[320px] sm:max-w-sm mx-auto lg:mx-0 lg:ml-auto">
                 <div className="relative bg-white p-5 sm:p-6 rounded-[2rem] shadow-xl border border-stone-200/60 z-10 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
+                  <p className="mb-5 text-center font-serif italic text-base text-stone-600 font-medium">
+                    Extrait du test Insights Discovery®
+                  </p>
                   <img
                     src="/assets/documents/insights-graph.png"
                     alt="Graphique Insights Discovery"
                     loading="lazy"
                     className="w-full h-auto rounded-xl object-contain mix-blend-multiply"
                   />
-                  <p className="mt-5 text-center font-serif italic text-sm text-stone-500">
-                    Extrait du test Insights Discovery®
-                  </p>
                 </div>
                 <Scribble className="-bottom-10 -right-6 w-24 h-8 text-stone-400/60 -rotate-[15deg] hidden sm:block z-0" />
               </AnimatedSection>
