@@ -152,25 +152,25 @@ export function About() {
               </AnimatedSection>
             </div>
 
-            <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex flex-col items-center">
+            <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex flex-col items-center z-50">
               <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[300px] lg:max-w-[340px] mx-auto lg:mx-0">
-                {/* Arrow pointing FROM graph TO text like a bridge */}
-                <svg className="hidden lg:block absolute -left-40 -top-8 w-72 h-40 text-stone-600 z-40 drop-shadow-sm pointer-events-none" viewBox="0 0 200 100" fill="none">
+                {/* Arrow pointing FROM top of graph card TO text like a bridge */}
+                <svg className="hidden lg:block absolute -left-48 -top-20 w-[360px] h-48 text-stone-600 z-50 drop-shadow-sm pointer-events-none" viewBox="0 0 300 150" fill="none">
                   <motion.path
                     initial={{ pathLength: 0 }}
                     whileInView={{ pathLength: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.2, ease: "easeInOut" }}
-                    d="M 180 70 C 140 -20, 40 -20, 5 45"
-                    stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none"
+                    d="M 260 130 C 220 10, 80 10, 10 110"
+                    stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"
                   />
                   <motion.path
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 1, duration: 0.3 }}
-                    d="M 20 35 L 5 45 L 15 60"
-                    stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"
+                    d="M 30 95 L 10 110 L 25 125"
+                    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"
                   />
                 </svg>
                 
