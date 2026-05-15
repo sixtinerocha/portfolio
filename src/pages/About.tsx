@@ -155,22 +155,22 @@ export function About() {
             <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex flex-col items-center">
               <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[300px] lg:max-w-[340px] mx-auto lg:mx-0">
                 {/* Arrow pointing FROM graph TO text like a bridge */}
-                <svg className="hidden lg:block absolute -left-32 -top-6 w-56 h-32 text-stone-600 z-10 drop-shadow-sm pointer-events-none" viewBox="0 0 150 100" fill="none">
+                <svg className="hidden lg:block absolute -left-40 -top-8 w-72 h-40 text-stone-600 z-40 drop-shadow-sm pointer-events-none" viewBox="0 0 200 100" fill="none">
                   <motion.path
                     initial={{ pathLength: 0 }}
                     whileInView={{ pathLength: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.2, ease: "easeInOut" }}
-                    d="M 140 70 C 110 -10, 40 -10, 5 45"
-                    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" fill="none"
+                    d="M 180 70 C 140 -20, 40 -20, 5 45"
+                    stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none"
                   />
                   <motion.path
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 1, duration: 0.3 }}
-                    d="M 5 45 L 20 35 M 5 45 L 15 58"
-                    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"
+                    d="M 20 35 L 5 45 L 15 60"
+                    stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" fill="none"
                   />
                 </svg>
                 
