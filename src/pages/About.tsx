@@ -199,20 +199,20 @@ export function About() {
                 <Scribble className="-bottom-8 -right-4 w-20 h-6 text-stone-400/60 -rotate-[15deg] hidden sm:block z-0" />
               </AnimatedSection>
 
-              <AnimatedSection delay={0.5} direction="up" className="mt-14 lg:mt-20 w-full max-w-[480px] mx-auto lg:mx-0">
-                <div className="flex flex-wrap items-center justify-center gap-y-3 gap-x-2 sm:gap-y-4 sm:gap-x-3 py-4">
+              <AnimatedSection delay={0.5} direction="up" className="mt-14 lg:mt-20 w-full max-w-[500px] mx-auto lg:mx-0">
+                <div className="flex flex-wrap items-center justify-center gap-y-4 gap-x-3 sm:gap-y-6 sm:gap-x-4 py-4">
                   {[
-                    { label: "Écoute active", style: "dark", rotate: -6, size: "lg" },
-                    { label: "Sens du collectif", style: "taupe", rotate: 4, size: "xl", marginX: "-ml-4" },
-                    { label: "Organisation", style: "paper", rotate: -3, size: "lg", marginY: "-mt-3" },
-                    { label: "Patience", style: "paper", rotate: 6, size: "md", marginX: "-ml-3" },
-                    { label: "Empathie", style: "dark", rotate: -7, size: "lg", marginY: "-mt-5" },
-                    { label: "Rigueur", style: "taupe", rotate: 3, size: "md", marginX: "-ml-5" },
-                    { label: "Discrétion", style: "paper", rotate: -5, size: "md", marginY: "-mt-2" },
-                    { label: "Persévérance", style: "paper", rotate: 5, size: "lg", marginX: "-ml-4" },
-                    { label: "Sens du service", style: "cream", rotate: -3, size: "xl", marginY: "-mt-4" },
-                    { label: "Conscience pro", style: "paper", rotate: 4, size: "lg", marginX: "-ml-3" },
-                    { label: "Esprit d’équipe", style: "cream", rotate: -6, size: "xl", marginY: "-mt-6" }
+                    { label: "Écoute active", style: "dark", rotate: -6, size: "lg", marginY: "mt-2" },
+                    { label: "Sens du collectif", style: "taupe", rotate: 4, size: "xl", marginX: "ml-2" },
+                    { label: "Organisation", style: "paper", rotate: -3, size: "lg", marginY: "-mt-4" },
+                    { label: "Patience", style: "paper", rotate: 6, size: "md", marginX: "ml-3" },
+                    { label: "Empathie", style: "dark", rotate: -7, size: "lg", marginY: "mt-3" },
+                    { label: "Rigueur", style: "taupe", rotate: 3, size: "md", marginX: "-ml-2" },
+                    { label: "Discrétion", style: "paper", rotate: -5, size: "md", marginY: "mt-4" },
+                    { label: "Persévérance", style: "paper", rotate: 5, size: "lg", marginX: "ml-4" },
+                    { label: "Sens du service", style: "cream", rotate: -3, size: "xl", marginY: "-mt-2" },
+                    { label: "Conscience pro", style: "paper", rotate: 4, size: "lg", marginX: "-ml-1" },
+                    { label: "Esprit d’équipe", style: "cream", rotate: -6, size: "xl", marginY: "mt-5" }
                   ].map((skill, i) => {
                     const chipClass = {
                       dark:  'bg-stone-900 text-stone-50 border border-stone-800',
