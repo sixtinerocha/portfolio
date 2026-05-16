@@ -154,8 +154,36 @@ export function About() {
 
             <div className="lg:col-span-5 relative mt-4 lg:mt-0 flex flex-col items-center">
               <AnimatedSection delay={0.4} direction="up" className="relative w-full max-w-[280px] sm:max-w-[300px] mx-auto lg:mx-0">
-                {/* Arrow pointing FROM graph TO text */}
-                <HandDrawnArrow className="hidden lg:block absolute -left-32 top-[20%] w-32 h-32 text-stone-800 scale-x-[-1] -rotate-[45deg] z-10 drop-shadow-sm" />
+                {/* Bridge arrow pointing FROM graph top TO text block */}
+                <svg 
+                  aria-hidden 
+                  className="hidden lg:block absolute -left-28 -top-14 w-36 h-28 text-[#FF4500] z-20" 
+                  viewBox="0 0 100 80" 
+                  fill="none" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <motion.path
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.4, ease: 'easeInOut' }}
+                    d="M90 70 C 90 -10, 40 -10, 10 35"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    fill="none"
+                  />
+                  <motion.path
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1, duration: 0.4 }}
+                    d="M10 35 L 12 21 M10 35 L 24 35"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                </svg>
                 
                 <div className="relative bg-white p-5 sm:p-6 rounded-[2rem] shadow-xl border border-stone-200/60 z-10 transform lg:rotate-2 hover:rotate-0 transition-transform duration-500">
                   <p className="mb-5 text-center font-serif italic text-base text-stone-600 font-medium">
@@ -171,31 +199,46 @@ export function About() {
                 <Scribble className="-bottom-10 -right-6 w-24 h-8 text-stone-400/60 -rotate-[15deg] hidden sm:block z-0" />
               </AnimatedSection>
 
-              <AnimatedSection delay={0.5} direction="up" className="mt-12 lg:mt-16 w-full max-w-[340px] mx-auto lg:mx-0">
-                <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-1 sm:gap-y-3 sm:gap-x-2">
+              <AnimatedSection delay={0.5} direction="up" className="mt-12 lg:mt-16 w-full max-w-[420px] mx-auto lg:mx-0">
+                <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-1 sm:gap-y-3 sm:gap-x-2 py-4">
                   {[
-                    "Écoute active", "Sens du collectif", "Organisation", "Patience",
-                    "Empathie", "Rigueur", "Discrétion", "Persévérance",
-                    "Sens du service", "Conscience professionnelle", "Esprit d’équipe"
+                    { label: "Écoute active", style: "dark", rotate: -4, size: "md" },
+                    { label: "Sens du collectif", style: "taupe", rotate: 3, size: "lg", marginX: "-ml-3" },
+                    { label: "Organisation", style: "paper", rotate: -2, size: "md", marginY: "-mt-2" },
+                    { label: "Patience", style: "paper", rotate: 5, size: "sm", marginX: "-ml-2" },
+                    { label: "Empathie", style: "dark", rotate: -5, size: "md", marginY: "-mt-3" },
+                    { label: "Rigueur", style: "taupe", rotate: 2, size: "sm", marginX: "-ml-4" },
+                    { label: "Discrétion", style: "paper", rotate: -4, size: "sm" },
+                    { label: "Persévérance", style: "paper", rotate: 4, size: "sm", marginX: "-ml-3" },
+                    { label: "Sens du service", style: "cream", rotate: -2, size: "md", marginY: "-mt-3" },
+                    { label: "Conscience pro", style: "paper", rotate: 3, size: "md", marginX: "-ml-2" },
+                    { label: "Esprit d’équipe", style: "cream", rotate: -5, size: "md", marginY: "-mt-4" }
                   ].map((skill, i) => {
-                    const styles = [
-                      'bg-stone-900 text-stone-50', // dark
-                      'bg-stone-400 text-white', // taupe
-                      'bg-stone-200 text-stone-900', // cream
-                      'bg-stone-50 text-stone-900 border border-stone-300', // paper
-                    ];
-                    const styleClass = styles[i % styles.length];
-                    const rotate = [-6, 4, -3, 5, -5, 2, -4, 6, -2, 3, -5][i];
+                    const chipClass = {
+                      dark:  'bg-stone-900 text-stone-50 border border-stone-800',
+                      taupe: 'bg-stone-400 text-white border border-stone-400',
+                      cream: 'bg-stone-200 text-stone-900 border border-stone-200',
+                      paper: 'bg-stone-50 text-stone-900 border border-stone-300',
+                    }[skill.style as 'dark'|'taupe'|'cream'|'paper'];
+                    
+                    const chipSize = {
+                      sm: 'px-4 py-2 text-sm sm:text-base',
+                      md: 'px-5 py-2.5 text-base sm:text-lg',
+                      lg: 'px-6 py-3 text-lg sm:text-xl',
+                    }[skill.size as 'sm'|'md'|'lg'];
+
                     return (
                       <motion.span
-                        whileHover={{ scale: 1.08, rotate: 0, zIndex: 20 }}
-                        initial={{ opacity: 0, rotate }}
-                        whileInView={{ opacity: 1, rotate }}
+                        whileHover={{ scale: 1.05, rotate: 0, zIndex: 50, transition: { duration: 0.2 } }}
+                        initial={{ opacity: 0, y: 10, rotate: skill.rotate * 0.4 }}
+                        whileInView={{ opacity: 1, y: 0, rotate: skill.rotate }}
+                        transition={{ duration: 0.5, delay: i * 0.05 }}
                         viewport={{ once: true }}
                         key={i}
-                        className={`px-4 py-2 rounded-full shadow-sm font-serif italic text-sm sm:text-base cursor-default relative inline-block ${styleClass}`}
+                        className={`rounded-full shadow-sm font-serif italic cursor-default relative inline-block tracking-tight
+                          ${chipClass} ${chipSize} ${skill.marginX || ''} ${skill.marginY || ''}`}
                       >
-                        {skill}
+                        {skill.label}
                       </motion.span>
                     );
                   })}
